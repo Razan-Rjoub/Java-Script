@@ -76,7 +76,7 @@ function double(x=7) {
 }
 
 function double(x='7') {
-  return 2 * 'x';
+  return 2 * x;
 }
 
 
@@ -123,7 +123,7 @@ Ex: multiply(5,4)
 => 20
 */
 function multiply(x,y){
-    return 3*4
+    return x*y
 }
 console.log(multiply(3,4))
 
@@ -486,7 +486,7 @@ Ex: counter()
 */
  let x=0; 
 function counter(){
-  return x++;
+  return ++x;
 }
 
 console.log(counter())
@@ -525,7 +525,7 @@ Ex: counter()
 => 1
 */
 function resetCounter(){
-    return x--;
+    return --x;
 }
 console.log(resetCounter())
 console.log(resetCounter())
