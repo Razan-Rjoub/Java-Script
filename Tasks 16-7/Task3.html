@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Task3</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <form action="">
+        <label for="FName">Enter a FName:</label>
+        <input type="text" id="FName" onkeyup="checkFname()">
+        <small id="check" class="form-text text-danger">enter your first name</small>
+        <br>
+        <label for="LName">Enter a LName:</label>
+        <input type="text" id="LName" onkeyup="checkLname()">
+        <small id="checkl" class="form-text text-danger">enter your Last name</small>
+        <br>
+        <label for="Birth">Enter a Bdate:</label>
+        <input type="text" id="Birth" onkeyup="checkBirth()">
+        <small id="checkB" class="form-text text-danger">enter your birth date</small>
+        <br>
+        <label for="email">Enter an email:</label>
+        <input type="email" id="email" onkeyup="checkEmail()">
+        <small id="checkE" class="form-text text-danger">enter your email </small>
+        <br>
+        <label for="emailconfirm">Confirm Email:</label>
+        <input type="email" id="emailconfirm" onkeyup="checkEmailconfirm()">
+        <small id="checkEC" class="form-text text-danger">enter your email conformation </small>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" onkeyup="checkPassword()">
+        <small id="checkP" class="form-text text-danger">enter your password </small>
+        <br>
+        <label for="passconfirm">Confirm password:</label>
+        <input type="text" id="passconfirm" onkeyup="checkpassconfirm()">
+        <small id="checkPC" class="form-text text-danger">enter your password conformation </small>
+        <br>
+    </form>
+    <script>
+        function checkFname() {
+            const inputname = document.getElementById('FName').value;
+
+            const regex = /^[\d]*$/;
+            if (regex.test(inputname)) {
+                document.getElementById('check').innerHTML = 'The name should contain only letters.';
+            } else {
+                document.getElementById('check').innerHTML = 'The first name is true';
+            }
+
+        }
+        function checkLname() {
+            const inputLname = document.getElementById('LName').value;
+
+            const regex = /^[\d]*$/;
+            if (regex.test(inputLname)) {
+                document.getElementById('checkl').innerHTML = 'The name should contain only letters.';
+            } else {
+                document.getElementById('checkl').innerHTML = 'The last name is true';
+            }
+
+        }
+        function checkBirth() {
+            const inputBirth = document.getElementById('Birth').value;
+            const regex = /^(0?[1-9]|[1-2][0-9]|3[0-1])-(0?[1-9]|1[0-2])-\d{4}$/
+
+            if (!regex.test(inputBirth)) {
+                document.getElementById('checkB').innerHTML = 'The Birth date should be dd-mm-yyyy.';
+            }
+            else {
+                document.getElementById('checkB').innerHTML = 'The Birth date is true';
+            }
+        }
+        function checkEmail() {
+            const inputemail = document.getElementById('email').value;
+            const regex = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{3}$/
+            if (!regex.test(inputemail)) {
+                document.getElementById('checkE').innerHTML = 'The email  not true';
+            }
+            else {
+                document.getElementById('checkE').innerHTML = 'The email is true';
+            }
+        }
+        function checkEmailconfirm() {
+            const inputemailc = document.getElementById('emailconfirm').value;
+            const regex = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{3}$/
+            if (!regex.test(inputemailc)) {
+                document.getElementById('checkEC').innerHTML = 'The email  not true';
+            }
+            else {
+                document.getElementById('checkEC').innerHTML = 'The email is true';
+            }
+        }
+        function checkPassword(){
+            const inputpass = document.getElementById('password').value;
+            const regex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            if (!regex.test(inputpass)) {
+                document.getElementById('checkP').innerHTML = 'The password  not true';
+            }
+            else {
+                document.getElementById('checkP').innerHTML = 'The password is true';
+            }
+        }
+        function checkpassconfirm(){
+            const inputpass = document.getElementById('passconfirm').value;
+            const regex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d @]{8,}$/;
+            if (!regex.test(inputpass)) {
+                document.getElementById('checkPC').innerHTML = 'The password  not true';
+            }
+            else {
+                document.getElementById('checkPC').innerHTML = 'The password is true';
+            } 
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

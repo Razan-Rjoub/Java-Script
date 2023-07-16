@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Task2</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    .first,
+    .second, .third {
+        border: 1px solid black;
+        width: 400px;
+        height: 400px;
+        margin-top: 100px;
+
+    }
+    .first{
+        display: inline-block;
+    }
+    .second{
+        display: inline-block;
+    }
+    .third{
+        display: inline-block;
+    }
+</style>
+
+<body class="container">
+    <form action="">
+        <label for="Name">Name:</label>
+        <input type="text" id="Name">
+        <br>
+        <label for="Age">Age:</label>
+        <input type="number" id="Age">
+        <br>
+        <label for="Gender">Gender:</label>
+        <input type="text" id="Gender">
+        <br>
+        <label for="BirthDate">Birth Date:</label>
+        <input type="text" id="BirthDate" placeholder="dd.mm.yy">
+        <br>
+        <label for="Image">Your Image:</label>
+        <input type="text" id="Image">
+        <hr>
+        <label for="Description">Description:</label>
+        <input type="text" id="Description">
+        <br>
+        <label for="major">major & university:</label>
+        <input type="text" id="major">
+        <br>
+        <label for="">Programming Language: </label>
+
+        <input type="checkbox" name="Html" id="Html">
+        <label for="Html">HTML</label>
+        <input type="checkbox" name="css" id="css">
+        <label for="css">CSS</label>
+        <input type="checkbox" name="js" id="js">
+        <label for="js">JS</label>
+        <hr>
+
+        <label for="siblingsnum">siblings number:</label>
+        <input type="number" id="siblingsnum">
+        <br>
+
+        <label for="siblingdescription">description of siblings:</label>
+        <input type="text" id="siblingdescription">
+        <br>
+        <button type="submit" onclick="submitclick()">Submit</button>
+    </form>
+    <div>
+        <div class="first">
+            <h4>The name is: <span class="name"></span></h4>
+            <h4>The age is: <span class="age"></span></h4>
+            <h4>The gender is: <span class="gender"></span></h4>
+            <h4>The BirthDate is: <span class="birthdate"></span></h4>
+            <h4>The image is: <img class="image"></img></p>
+
+        </div>
+    </div>
+    <div>
+        <div class="second">
+            <h4>The description is: <span class="des"></span></h4>
+            <h4>The major& university is: <span class="major"></span></h4>
+            <h4>The programming language is: <span class="lang"></span></h4>
+
+        </div>
+    </div>
+    <div>
+        <div class="third">
+            <h4>The siblings number: <span class="siblingsnum"></span></h4>
+            <h4>The description of siblings is: <span class="siblingsdes"></span></h4>
+
+        </div>
+    </div>
+    
+    <script>
+        function submitclick() {
+            const name = document.getElementById('Name').value;
+            const Age = document.getElementById('Age').value;
+            const Gender = document.getElementById('Gender').value;
+            const BirthDate = document.getElementById('BirthDate').value;
+            const Image = document.getElementById('Image').value;
+            const Description = document.getElementById('Description').value;
+            const major = document.getElementById('major').value;
+
+            const Html = document.getElementById('Html');
+            if (Html.checked == true) {
+                var Htmlcheck = document.getElementById('Html').value;
+            }
+            const css = document.getElementById('css');
+            if (css.checked == true) {
+                var csscheck = document.getElementById('css').value;
+            }
+            const js = document.getElementById('js');
+            if (js.checked == true) {
+                var jscheck = document.getElementById('js').value;
+            }
+            const siblingsnum = document.getElementById('siblingsnum').value;
+            const siblingdescription = document.getElementById('siblingdescription').value;
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('Age', Age);
+            localStorage.setItem('Gender', Gender);
+            localStorage.setItem('BirthDate', BirthDate);
+            localStorage.setItem('Image', Image);
+            localStorage.setItem('Description', Description);
+            localStorage.setItem('major', major);
+            localStorage.setItem('HTML', Htmlcheck);
+            localStorage.setItem('css', csscheck);
+            localStorage.setItem('js', jscheck);
+            localStorage.setItem('sibilings number', siblingsnum);
+            localStorage.setItem('description sibilings', siblingdescription);
+        }
+        firstcard();
+        function firstcard() {
+            if (localStorage.length > 1) {
+                document.getElementsByClassName('name')[0].innerHTML = localStorage.getItem('name');
+                document.getElementsByClassName('age')[0].innerHTML = localStorage.getItem('Age');
+                document.getElementsByClassName('gender')[0].innerHTML = localStorage.getItem('Gender');
+                document.getElementsByClassName('birthdate')[0].innerHTML = localStorage.getItem('BirthDate');
+                document.getElementsByClassName('image')[0].src = localStorage.getItem('Image');
+            }
+            else {
+                document.getElementsByClassName('first')[0].outerHTML = '<p></p>'
+            }
+        }
+        secondcard();
+        function secondcard() {
+            if (localStorage.length > 1) {
+                document.getElementsByClassName('des')[0].innerHTML = localStorage.getItem('Description');
+                document.getElementsByClassName('major')[0].innerHTML = localStorage.getItem('major');
+                const csschecked = localStorage.getItem('css');
+                const htmlchecked = localStorage.getItem('HTML');
+                const jschecked = localStorage.getItem('js');
+                if (csschecked == 'on' && htmlchecked == 'on' && jschecked == 'on') {
+                    document.getElementsByClassName('lang')[0].innerHTML = 'HTML,CSS,JS'
+                }
+                else if (csschecked == 'on' && htmlchecked == 'on') {
+                    document.getElementsByClassName('lang')[0].innerHTML = 'HTML,CSS'
+                    console.log('ijk')
+                }
+                else if (csschecked == 'on' && jschecked == 'on') {
+                    document.getElementsByClassName('lang')[0].innerHTML = 'CSS,JS'
+                }
+                else if (htmlchecked == 'on' && jschecked == 'on') {
+                    document.getElementsByClassName('lang')[0].innerHTML = 'HTML,JS'
+                }
+                else if (csschecked == 'on') {
+                    document.getElementsByClassName('lang')[0].innerHTML = 'CSS'
+                }
+                else if (htmlchecked == 'on') {
+                    document.getElementsByClassName('lang')[0].innerHTML = 'HTML'
+                }
+                else if (jschecked == 'on') {
+                    document.getElementsByClassName('lang')[0].innerHTML = 'JS'
+                }
+            }
+            else {
+                document.getElementsByClassName('second')[0].outerHTML = '<p></p>'
+            }
+        }
+        thirdcard();
+        function thirdcard(){
+            if(localStorage.length>1){
+                document.getElementsByClassName('siblingsnum')[0].innerHTML = localStorage.getItem('sibilings number');
+                document.getElementsByClassName('siblingsdes')[0].innerHTML = localStorage.getItem('description sibilings');
+            }
+            else {
+                document.getElementsByClassName('third')[0].outerHTML = '<p></p>'
+            }
+        }
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
