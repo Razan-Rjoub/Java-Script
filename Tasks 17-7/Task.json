@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Razan",
+        "Age": "21",
+        "Major": "Software Engineering",
+        "University": "JUST",
+        "Image": "https://img.freepik.com/premium-vector/people-profile-graphic_24911-21374.jpg?w=740"
+    },
+    {
+        "name": "Abeda",
+        "Age": "22",
+        "Major": "physics",
+        "University": "yarmouk",
+        "Image": "https://cdn-icons-png.flaticon.com/512/780/780248.png?w=740&t=st=1689604688~exp=1689605288~hmac=2e6a49b3ee1d5e0bf5c3c393114529a03c1a43c4e591519c223d431facea852f"
+    },
+    {
+        "name": "sawsan",
+        "Age": "27",
+        "Major": "CIS",
+        "University": "Yarmouk",
+        "Image": "https://img.freepik.com/premium-vector/people-profile-graphic_24911-21374.jpg?w=740"
+    },
+    {
+        "name":"Anfal",
+        "Age":"24",
+        "Major":"Software Engineering",
+        "University":"JUST",
+        "Image":"https://cdn-icons-png.flaticon.com/512/780/780248.png?w=740&t=st=1689604688~exp=1689605288~hmac=2e6a49b3ee1d5e0bf5c3c393114529a03c1a43c4e591519c223d431facea852f"
+            }
+
+]

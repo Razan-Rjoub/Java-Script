@@ -13,14 +13,14 @@
 </head>
 
 <body>
-    <input type="color" id="pickcolor">
+    <input type="color" id="pickcolor" >
     <script>
         const color = document.getElementById('pickcolor');
-        const body = document.getElementsByTagName('body')[0];
+        const body = document.body;
         color.addEventListener('input', function () {
             var colorvalue = color.value;
             sessionStorage.setItem('color', colorvalue);
-            body.style.backgroundColor = sessionStorage.getItem('color');
+           body.style.backgroundColor = sessionStorage.getItem('color');
         })
         const storedColor = sessionStorage.getItem('color');
         if (storedColor.length>1) {
