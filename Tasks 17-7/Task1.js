@@ -2,11 +2,8 @@ const http = new XMLHttpRequest();
 http.open("GET", "Task.json");
 http.onload = function () {
   const personinfo = JSON.parse(this.responseText);
-  var name = document.getElementsByClassName("name");
-  var age = document.getElementsByClassName("Age");
-  var major = document.getElementsByClassName("major");
-  var uni = document.getElementsByClassName("university");
-  var img = document.getElementsByClassName("image");
+  console.log(personinfo);
+
   var tbody = document.getElementsByTagName("tbody")[0];
   for (let i = 0; i < 4; i++) {
     var row = document.createElement("tr");
