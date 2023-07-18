@@ -1,4 +1,6 @@
-const http = new XMLHttpRequest();
+
+function loaddata(){
+  const http = new XMLHttpRequest();
 http.open("GET", "Task.json");
 http.onload = function () {
   const personinfo = JSON.parse(this.responseText);
@@ -32,4 +34,4 @@ http.onload = function () {
     row.appendChild(Imaget);
   }
 };
-http.send();
+http.send();}
